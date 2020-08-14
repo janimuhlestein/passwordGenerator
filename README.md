@@ -1,48 +1,28 @@
-# 03 JavaScript: Password Generator
+# passwordGenerator
+Generate a password depending on the user specifications
 
-Create an application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+1. On click, run a writePassword() function that will get user input on the length
+of the password desired, and whether they wish to use upper case, lower case, numeric 
+and special characters.
 
-If you are unfamiliar with special characters, take a look at [some examples](https://www.owasp.org/index.php/Password_special_characters).
+2. Verify that they do not enter a non-integer.
 
-## User Story
+4. Verify that they only enter a length between 8 and 128 chars.
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
+5. Verify that they make at least one option choice.
 
-## Acceptance Criteria
+6. Once all options are set, generate password.
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+7. Display new password in textarea on screen.
 
-The following image demonstrates the application functionality:
+Methods:
 
-![password generator demo](./Assets/03-javascript-homework-demo.png)
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+1. Create a settings object to hold all settings.
+2. Create strings with appropriate characters.
+4. Create an array of options to choose from (i.e., upper, lower, etc.).
+5. Use Math.floor() and Math.random() to a) select an option, and b) select a 
+random character from the option list.
+6. Add the random character to the password.
+7. Iterate through a loop to get as many random characters as needed.
+8. Use event listener to check for click events.
+9. Use getElementById to get the text area and write the new password.
