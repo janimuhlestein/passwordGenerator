@@ -109,6 +109,8 @@ var writePassword = function() {
     console.log(password);
     //output their new password to the text area
     document.getElementById("password").value = "Your new password is: " + password; 
+    //because we want them to be able to run this many times, let's reset options
+    setObj.reset();
 
 }
 
