@@ -26,3 +26,5 @@ random character from the option list.
 7. Iterate through a loop to get as many random characters as needed.
 8. Use event listener to check for click events.
 9. Use getElementById to get the text area and write the new password.
+
+To see original requirements, look at the readme.md in the assets/requirements folder.
