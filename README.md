@@ -15,7 +15,7 @@ and special characters.
 
 7. Display new password in textarea on screen.
 
-8. Decided to add a reset function to reset object so that they can generate many different passwords with different options as desired. As it was, the when you clicked on the button again, it just generated a new password from the same options. Asked the user if they wanted to change optionsl If so, it recurses through the function again.
+8. Decided to add a reset function to reset object so that they can generate many different passwords with different options as desired. As it was, the when you clicked on the button again, it just generated a new password from the same options. Asked the user if they wanted to change options! If so, it recurses through the function again.
 
 Methods:
 
