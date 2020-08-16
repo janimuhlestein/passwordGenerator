@@ -17,6 +17,9 @@ var settings = {
       this.numeric = "undefined";
   }
   }
+
+  var clickNum = 0;
+
 //get the settings
 var getSettings = function() {
 //get the correct number of characters, and don't let them enter a non integer
@@ -55,12 +58,22 @@ return settings;
 
 //now that we've got the settings, let's generate a password based on them!
 var writePassword = function() {
+  debugger;
     var setObj = getSettings();
+    clickNum += 1;
+    if(clickNum > 1){
+      var ans = window.confirm("Do you want to reset your options?");
+      if(ans){
+        setObj.reset();
+        setObj = getSettings();
+      }
+    }
     //set up the strings containing our possible characters
     var alpha = "abcdefghijklmnopqrstuvwxyz";
     var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var numeric = "1234567890";
     var special = "#@!$%^&*";
+    var selectedOption;
     var password = "";
     var randomChar = "";
     //option settings -- add options to the array depending on the user choices
@@ -102,19 +115,17 @@ var writePassword = function() {
     //get a random character from that option
     //add it to the password
     for(i=0; i< length; i++){
-        var selectedOption = options[Math.floor(Math.random() * options.length)];
+        selectedOption = options[Math.floor(Math.random() * options.length)];
         randomChar = selectedOption.charAt(Math.floor(Math.random() * selectedOption.length));
         password += randomChar;
     }
     console.log(password);
     //output their new password to the text area
     document.getElementById("password").value = "Your new password is: " + password; 
-    //because we want them to be able to run this many times, let's reset options
-    setObj.reset();
-
-}
+    
+  }
 
 var generateBtn = document.querySelector("#generate");
-// Add event listener to generate button
+//Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
